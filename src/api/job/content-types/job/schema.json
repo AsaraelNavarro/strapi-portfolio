@@ -4,7 +4,7 @@
   "info": {
     "singularName": "job",
     "pluralName": "jobs",
-    "displayName": "Job",
+    "displayName": "Jobs",
     "description": ""
   },
   "options": {
@@ -12,24 +12,30 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "puesto": {
+    "position": {
       "type": "string"
     },
-    "empresa": {
+    "company": {
       "type": "string",
       "required": true
     },
-    "actividades": {
+    "activities": {
       "type": "richtext",
       "required": false
     },
-    "fecha_entrada": {
+    "start_date": {
       "type": "date",
       "required": true
     },
-    "fecha_salida": {
+    "exit_date": {
       "type": "date",
       "required": false
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project",
+      "mappedBy": "job"
     }
   }
 }
